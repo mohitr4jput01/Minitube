@@ -1,0 +1,174 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0f0f0f;
+    color: white;
+}
+
+header {
+    height: 65px;
+    background: #181818;
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    color: red;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+header input {
+    width: 40%;
+    margin-left: auto;
+    padding: 12px;
+    border-radius: 25px;
+    border: 1px solid #444;
+    background: #222;
+    color: white;
+}
+
+header button {
+    padding: 12px 20px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+}
+
+aside {
+    width: 210px;
+    min-height: 100vh;
+    background: #181818;
+    padding: 20px 10px;
+    position: fixed;
+}
+
+aside button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 8px;
+    background: transparent;
+    border: none;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+aside button:hover {
+    background: #333;
+}
+
+main {
+    margin-left: 210px;
+    width: calc(100% - 210px);
+    padding: 25px;
+}
+
+#player {
+    display: none;
+    margin-bottom: 30px;
+}
+
+#player iframe {
+    width: 100%;
+    max-width: 850px;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 12px;
+}
+
+#player h2 {
+    margin-top: 12px;
+}
+
+.videos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.video {
+    cursor: pointer;
+}
+
+.video img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.video h3 {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.video p {
+    color: #aaa;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.video button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+@media(max-width: 850px) {
+    .videos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 550px) {
+    aside {
+        width: 65px;
+        padding: 10px 5px;
+    }
+
+    aside button {
+        font-size: 0;
+        text-align: center;
+    }
+
+    main {
+        margin-left: 65px;
+        width: calc(100% - 65px);
+        padding: 12px;
+    }
+
+    .videos {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    header {
+        padding: 8px;
+        gap: 6px;
+    }
+}
